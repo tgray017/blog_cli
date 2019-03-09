@@ -2,7 +2,6 @@ require_relative '../config/environment.rb'
 
 class BlogCli
   class Controller
-    #attr_accessor :email, :password, :current_user, :input
 
     def call
       login
@@ -181,14 +180,5 @@ class BlogCli
       puts "Edits saved!"
       menu
     end
-
-    # Only for testing purposes
-    def set_user
-      @current_user = User.where(:email => "tom@gmail.com", :password => "ilovewilson").first
-    end
   end
 end
-
-blog = BlogCli::Controller.new
-blog.set_user
-blog.call
