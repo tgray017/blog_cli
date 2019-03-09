@@ -1,6 +1,13 @@
-require "bundler/gem_tasks"
-require "rspec/core/rake_task"
+require_relative './config/environment'
+require_relative './db/seed'
+require 'sinatra/activerecord/rake'
 
-RSpec::Core::RakeTask.new(:spec)
 
-task :default => :spec
+task :console do
+  ActiveRecord::Base.logger = Logger.new(STDOUT)
+  Pry.start
+end
+
+task :seed do
+  Seed.seed_database
+end

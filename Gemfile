@@ -1,6 +1,9 @@
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
-
-# Specify your gem's dependencies in blog_cli.gemspec
-gemspec
+gem 'activerecord'
+gem 'pry'
+gem 'rake'
+gem 'sqlite3', '~>1.3.6'
+gem 'sinatra-activerecord'
+gem 'rails'
+gem 'awesome_print'
